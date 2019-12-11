@@ -11,7 +11,7 @@ public class App {
         PlayersList playersList = new PlayersList();
         PlayingField playingField = new PlayingField(11);
 
-        //***** CREATE SERVER AND START ******
+        //****** CREATE SERVER AND START *******
         Server server = new Server(gameWord, playersList, playingField, 2);
         server.serverInit();
 
