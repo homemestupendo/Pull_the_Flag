@@ -33,16 +33,18 @@ public class Server {
     private int numberOfPlayers;
     private int maxPlayers;
     private int finalFlagPosition;
+    private int port;
 
     /**
      * Constructor of Server Instance
      */
 
-    public Server(WordGenerator gameWord, PlayersList playersList, PlayingField playingField, int maxPlayers) {
+    public Server(WordGenerator gameWord, PlayersList playersList, PlayingField playingField, int port, int maxPlayers) {
         this.playersList = playersList;
         this.playingField = playingField;
         this.maxPlayers = maxPlayers;
         this.gameWord = gameWord;
+        this.port = port;
     }
 
     /**
@@ -52,7 +54,7 @@ public class Server {
     public void serverInit() {
 
         try {
-            setupConnection(DEFAULT_PORT);
+            setupConnection(port);
             startGame();
 
         } catch (InterruptedException e) {
